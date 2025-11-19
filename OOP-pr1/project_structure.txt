@@ -1,0 +1,19 @@
+# Структура программы (неполная)
+Program
+   |
+WindowManager                                                # Меняет текушее окно
+| | | | | |                              Converter           # Базовый класс для некоторых преобразований
+| | | | | MainWindow                         |               # Главное окно (меню выбора)
+| | | | ImplicitWindow -- ImplicitConv ----- *               # Окно неявных преобразований и логика
+| | | ExplicitWindow -- ExplicitConv ------- *               # Окно явных преобразований и логика
+| | template_Window                          |               # Шаблон окна определённой структуры
+| |  | | |                                   |
+| |  | | asIsWindow -------------------------*
+| |  | convertTryParseWindow
+| |  ourConvWindow
+| ValidateWindow -- Screen                                   # Окно валидации ввода и логика "экрана"
+
+
+*Conv - логика 
+*Window - окна
+LogMessage - содержит метод с замыканием для вывода текста в выбранный TextView
